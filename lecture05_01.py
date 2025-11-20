@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-from my_module.K24091.lecture05_camera_image_capture import MyVideoCapture
+from lecture05_camera_image_capture import MyVideoCapture
 
 def lecture05_01():
     # カメラキャプチャ実行
@@ -8,12 +8,12 @@ def lecture05_01():
     app.run()
     
     # 画像をローカル変数に保存
-    google_img : np.ndarray = cv2.imread('images/google.png')
+    google_img : np.ndarray = cv2.imread('google.png')
     capture_img : np.ndarray = app.get_img()
     
     # 画像の読み込みチェック
     if google_img is None:
-        print("エラー: 'images/google.png'を読み込めませんでした。ファイルパスを確認してください。")
+        print("エラー: 'google.png'を読み込めませんでした。ファイルパスを確認してください。")
         return
     if capture_img is None:
         print("エラー: カメラキャプチャ画像が取得できませんでした。")
